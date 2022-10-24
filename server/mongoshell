@@ -1,0 +1,13 @@
+-- open mongoshell on terminal
+mongo
+
+-- creating database
+use CMS
+
+-- Show list of Databases
+show dbs
+
+-- Check current Database
+db
+
+
