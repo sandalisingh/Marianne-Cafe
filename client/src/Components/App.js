@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <div className="App">
-        <Casserole InputsList={['Name', 'Price', 'ImageURL']}/>
+        <Casserole InputsList={['Name', 'Price', 'Image']}/>
         <Form InputsList={['Heading']} SubmitBtn="+"/>
       </div>
     </div>

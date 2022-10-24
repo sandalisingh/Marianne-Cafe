@@ -27,6 +27,13 @@ body{
     border: 1px solid black;
 }
 
+.Form button{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+}
+
 /* ---------------------------- TEXTS FONTS ---------------------------- */
 
 .FontThin{
@@ -34,18 +41,51 @@ body{
     font-weight: lighter;
 }
 
+.LinedText{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 .LinedText::before, .LinedText::after{
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid rgb(194, 194, 194);
-  background-color: rgb(169, 83, 255);
+    content: '';
+    flex: 1;
+    
+    
+    border-color:  0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(169, 83, 255),
+    0 0 82px rgb(169, 83, 255),
+    0 0 92px rgb(169, 83, 255),
+    0 0 102px rgb(169, 83, 255),
+    0 0 151px rgb(169, 83, 255);
+    
+    border-bottom: 1px solid ;
+}
+
+.LineTextLine:not(:empty)::before,.LineTextLine:not(:empty)::after {
+    margin-left: .25em;
 }
 
 .FontCursive{
-    font-family: 'Alex Brush', cursive;
+    /* font-family: 'Alex Brush', cursive; */
+    font-family: "Sacramento", sans-serif;
 }
 
-.neonText {
+.neonPurpleText{
+    text-shadow: 
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(169, 83, 255),
+    0 0 82px rgb(169, 83, 255),
+    0 0 92px rgb(169, 83, 255),
+    0 0 102px rgb(169, 83, 255),
+    0 0 151px rgb(169, 83, 255);
+}
+
+.neonGreenText {
     color: #fff;
     text-shadow:
         0 0 7px #fff,
@@ -58,6 +98,14 @@ body{
         0 0 151px #0fa;
 }
 
+.SmallText{
+    font-size: 1.6rem;
+}
+
+.VSmallText{
+    font-size: 1rem;
+}
+
 /* ---------------------------- FORMS ---------------------------- */
 
 .Form{
@@ -66,6 +114,17 @@ body{
 
 /* ---------------------------- INPUT BOXES ---------------------------- */
 
+input{
+    padding: 3%;
+    margin-bottom: 3%;
+}
+
+input::placeholder{
+    
+    size: 30rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 /* ---------------------------- IMAGES ---------------------------- */
 
 img{
@@ -73,6 +132,50 @@ img{
 }
 
 /* ---------------------------- CONTAINERS ---------------------------- */
+
+.neonBox{
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em;
+}
+
+.neonBox:hover{
+    animation: pulsate 1.5s infinite alternate;  
+    /* border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    padding: 0.4em; */
+    box-shadow: 0 0 .2rem #fff,
+            0 0 .2rem #fff,
+            0 0 2rem #bc13fe,
+            0 0 0.8rem #bc13fe,
+            0 0 2.8rem #bc13fe,
+            inset 0 0 1.3rem #bc13fe; 
+}
+  
+@keyframes pulsate {
+    100% {
+        text-shadow:
+        0 0 4px #fff,
+        0 0 11px #fff,
+        0 0 19px #fff,
+        0 0 40px #bc13fe,
+        0 0 80px #bc13fe,
+        0 0 90px #bc13fe,
+        0 0 100px #bc13fe,
+        0 0 150px #bc13fe;
+    }
+    0% {
+      text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+    }
+}
 
 .Block{
     width: 100%;
@@ -85,29 +188,26 @@ img{
 
 .Block h4{
     position: absolute;
-    top: 3%;
+    /* top: -3rem; */
     left: 3%;
 }
 
 .Block h6{
     position: absolute;
-    top: 10%;
+    bottom: 15%;
     left: 3%;
     size: 20px;
 }
 
 .CircularBox{
-    border-radius: 40%;
-    background-color: #D9D9D9;
-    padding: auto;
-    width: 70%;
-    max-height: 100%;
+    /* border-radius: 45%; */
+    width: 50%;
     margin-right: 3%;
 }
 
-.CircularBox:first-child{
-    vertical-align: 100px;
-}
+/* .CircularBox:first-child{
+    vertical-align: 100px; 
+} */
 
 /* ---------------------------- ALLIGNMENTS ---------------------------- */
 

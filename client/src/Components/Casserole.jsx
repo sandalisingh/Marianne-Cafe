@@ -8,10 +8,10 @@ function Casserole(props){
 
     return( 
         <div className=" TextCenter">
-            <h1 className=" neonText LinedText FontThin FontCursive">Beverages</h1><br/>
+            <h1 className=" neonPurpleText LinedText FontThin FontCursive">Beverages</h1><br/>
             <div className="Casserole Flex">
                 {/* <Popup trigger={} position="right center"> */}
-                <div className="Center CircularBox" >
+                <div className="neonBox Center CircularBox" >
                     <Form className="" InputsList={props.InputsList} SubmitBtn="+"/>
                 </div>
                 {/* </Popup> */}
