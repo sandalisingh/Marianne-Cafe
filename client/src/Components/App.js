@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <div className="App">
         <Casserole InputsList={['Name', 'Price', 'ImageURL']}/>
-        <Form InputsList={['Heading']}/>
+        <Form InputsList={['Heading']} SubmitBtn="+"/>
       </div>
     </div>
   );

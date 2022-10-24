@@ -10,8 +10,10 @@ function Input(props){
 
     return( 
         <div>
-            <label>{props.labeling}</label><br/>
+            {/* <label>{props.labeling}</label><br/> */}
             <input 
+                className="TextCenter"
+                placeholder={props.labeling}
                 type={ props.labeling === 'Price' ? "number": "text" } 
                 step="0.01" onChange={handleInput} value={entry} 
                 name={props.labeling} required 

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 
 
-function Button(){
+function Button(props){
 
     const [isMouseOver, setMouseOver] = useState(false);
 
@@ -20,7 +20,7 @@ function Button(){
                 onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
                 type="submit"
             >
-                <p>ADD ITEM</p>
+                <p>{props.Text}</p>
             </button>
         </div>
     );

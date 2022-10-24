@@ -2,37 +2,138 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
-
-img{
-    max-width: 100%;
+    background-color: black;
+    color: white;
 }
 
 .App:only-child {
     margin: 3% 7%;
 }
 
-.Casserole{
-    background-color: red;
-}
+/* ---------------------------- BUTTONS ---------------------------- */
 
-.Casserole h1{
-    color: wheat;
-}
-
-.Casserole div{
-    display: flex;
-}
-
-.Block{
-    margin: 5%;
-    width: 30%;
+.CircularBtn{
+    border-radius: 100%;
     background-color: black;
     color: white;
+    border: 1px solid white;
+    width: 6vh;
+    height: 6vh;
+}
+
+.CircularBtn:hover{
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+/* ---------------------------- TEXTS FONTS ---------------------------- */
+
+.FontThin{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+.LinedText::before, .LinedText::after{
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  background-color: rgb(169, 83, 255);
+}
+
+.FontCursive{
+    font-family: 'Alex Brush', cursive;
+}
+
+.neonText {
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa,
+        0 0 102px #0fa,
+        0 0 151px #0fa;
+}
+
+/* ---------------------------- FORMS ---------------------------- */
+
+.Form{
+    padding: 3%;
+}
+
+/* ---------------------------- INPUT BOXES ---------------------------- */
+
+/* ---------------------------- IMAGES ---------------------------- */
+
+img{
+    max-width: 100%;
+}
+
+/* ---------------------------- CONTAINERS ---------------------------- */
+
+.Block{
+    width: 100%;
+    margin: 1px;
+}
+
+.Block:nth-child(1), .Block:nth-child(3) {
+    width: 70%;
+}
+
+.Block h4{
+    position: absolute;
+    top: 3%;
+    left: 3%;
+}
+
+.Block h6{
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    size: 20px;
+}
+
+.CircularBox{
+    border-radius: 40%;
+    background-color: #D9D9D9;
+    padding: auto;
+    width: 70%;
+    max-height: 100%;
+    margin-right: 3%;
+}
+
+.CircularBox:first-child{
+    vertical-align: 100px;
+}
+
+/* ---------------------------- ALLIGNMENTS ---------------------------- */
+
+.TextCenter{
     text-align: center;
 }
 
-.Form{
-    background-color: wheat;
-    padding: 3%;
+.Flex{
+    display: flex;
+}
+
+.Relative{
+    position: relative;
+}
+
+.TopRight{
+    position: absolute;
+    top: -4%;
+    right: -4%;
+    z-index: 1;
+}
+
+.Center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* border: 3px solid green;  */
 }
