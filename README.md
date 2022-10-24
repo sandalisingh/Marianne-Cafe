@@ -1,6 +1,4 @@
-# My Diet My Way
-
-A Website to provide Online Consultations to clients who seek comprehensive and organized diet charts from Dietitian Rashu Malhotra
+# Canteen Management System
 
 ## TECHNOLOGIES USED
 - FRONT END - HTML, CSS, Javascript, ReactJs <br />
