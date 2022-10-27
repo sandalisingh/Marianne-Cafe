@@ -11,7 +11,7 @@ import { BrowserRouter } from "react-router-dom";
 ReactDOM.render(
     <React.StrictMode>
     <BrowserRouter>       
-      <App />
+      <App isAdmin={true}/>
     </BrowserRouter>
     </React.StrictMode>,
   document.getElementById('root')
