@@ -11,7 +11,7 @@ function Block(props){
     }
 
     return( 
-        <div key={props.key} className="Center Block Relative">
+        <div key={props.key} className="Block  Relative">
             <h4 className="SmallText neonGreenText FontCursive">{props.Name}</h4>
             <h6 className="VSmallText neonGreenText">₹ {props.Price}</h6>
             

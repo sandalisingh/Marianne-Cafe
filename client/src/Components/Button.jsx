@@ -15,14 +15,14 @@ function Button(props){
     }
 
     return(
-        <div className="col-lg-2 col-md-4">
-            <button style={{ opacity : isMouseOver ? 0.8 : 1}}
+        // <div className="col-lg-2 col-md-4">
+            <button  style={{ opacity : isMouseOver ? 0.8 : 1}}
                 onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
-                type="submit"
+                type="submit" className="CircularBtn"
             >
                 <p>{props.Text}</p>
             </button>
-        </div>
+        // </div>
     );
 }
 
