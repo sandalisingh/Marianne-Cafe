@@ -10,6 +10,23 @@ body{
     margin: 3% 7%;
 }
 
+/* ---------------------------- FOOTER ---------------------------- */
+
+footer{
+    /* position: fixed;
+    bottom: 0;
+    left: 0; */
+    padding: 3px 2px 0;
+    /* color: black;
+    background-color: white; */
+    width: 100%;
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+/* ---------------------------- NAVBAR ---------------------------- */
+
 .SingleNav{
     background-color: white;
     padding: 10px 30px;
@@ -17,6 +34,9 @@ body{
     border: 2px solid rebeccapurple;
 
     position: fixed !important;
+    width: 140px;
+    height: 60px;
+    z-index: 1;
 }
 
 .SingleNav:hover{
@@ -59,6 +79,22 @@ body{
     background-color: rgb(220, 192, 248);
     color: white;
     border-color: rgb(249, 214, 214);
+}
+
+.ToggleBtn{
+    border-radius: 100%;
+    background-color: rebeccapurple;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    color: rebeccapurple;
+    cursor: pointer;
+}
+
+.LargeBtn{
+    width: 100px;
+    height: 100px;
+    margin: 40px !important;
 }
 
 /* ---------------------------- TEXTS FONTS ---------------------------- */
@@ -144,6 +180,12 @@ body{
     padding: 3%;
 }
 
+.FormBox{
+    width: 600px !important;
+    height: 300px !important;
+    /* margin-bottom: 100px; */
+}
+
 /* ---------------------------- INPUT BOXES ---------------------------- */
 
 input{
@@ -168,8 +210,13 @@ img{
 
 /* ---------------------------- CONTAINERS ---------------------------- */
 
+.SkeletonBox{
+    padding: 0;
+    margin: 0;
+}
+
 .FitInSizedBox{
-    display: inline-block;
+    display: inline-block !important;
 }
 
 .neonBox{
@@ -223,35 +270,53 @@ img{
 }
 
 .Block{
-    padding-left: 10px;
-    padding-bottom: 20px;
+    /* padding-left: 10px;
+    padding-bottom: 20px; */
     overflow: visible !important;
-    width: 400px !important;
+    /* width: 380px !important; */
     height: 300px !important;
     /* width: 100%; */
     /* margin: 3% 7% !important; */
+    margin: 3px;
 }
 
-.Block h3{
-    /* position: absolute;
-    top: 5% !important;
-    left: 3%; */
+.Block h4{
+    position: absolute;
+    top: 15% !important;
+    left: 5%;
     size: 5rem !important;
     /* z-index: 1; */
 }
 
-.Block p{
+.Block h6{
     position: absolute;
-    bottom: 15%;
-    left: 3%;
+    top: 25%;
+    left: 5%;
     size: 20px;
 }
+
+.Block:hover{
+    color: black;
+    cursor: pointer;
+    border: 1.4px solid rebeccapurple;
+    color: black !important;
+}
+
+/* .BlockAdmin{
+    background-color: red !important;
+    margin: 3%; 
+} */
 
 /* ----------------------------  Carousel ---------------------------- */
 
 .Carousel {
     display: inline-block;
-    width: 700px;
+    width: 100%;
+}
+
+.CarouselAdmin{
+    display: inline-block;
+    width: 940px;
 }
 
 /* ---------------------------- ALLIGNMENTS ---------------------------- */
@@ -279,6 +344,8 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* padding: 0;
+    margin: 0; */
     /* height: 200px; */
     /* border: 3px solid green;  */
 }

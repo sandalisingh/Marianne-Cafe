@@ -1,6 +1,14 @@
-import React from "react";
+import { useState } from "react";
 
 function Block(props){
+    const [TextFontClass, setTextFont] = useState("neonGreenText");
+    
+    var addClass = "Relative "
+    // if(props.isAdmin===true) {
+    //     addClass += "BlockAdmin"
+    // }else{
+        addClass += "Block"
+    // }
 
     function handleClick(id, heading) {
         // fetch(`/menu/deletion?delID=${encodeURIComponent(event)}`)
@@ -10,10 +18,18 @@ function Block(props){
         window.location.reload(false);      //to refresh the page
     }
 
+    function mouseEnter(){
+        setTextFont("neonPurpleText");
+    }
+
+    function mouseLeave() {
+        setTextFont("neonGreenText");
+    }
+
     return( 
-        <div key={props.key} className="Block  Relative">
-            <h4 className="SmallText neonGreenText FontCursive">{props.Name}</h4>
-            <h6 className="VSmallText neonGreenText">₹ {props.Price}</h6>
+        <div onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} key={props.key} className={addClass}>
+            <h4 className={TextFontClass+" SmallText FontCursive"}>{props.Name}</h4>
+            <h6 className={TextFontClass+" VSmallText"}>₹ {props.Price}</h6>
             
             <img src={props.ImageSRC} alt="Something"/>
             

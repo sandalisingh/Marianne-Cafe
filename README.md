@@ -1,6 +1,10 @@
 # Canteen Management System
 
 ## TECHNOLOGIES USED
-- FRONT END - HTML, CSS, Javascript, ReactJs <br />
+- FRONT END - ReactJs <br />
 - BACK END - NodeJs <br />
-- DATABASE - MongoDB (Mongoose) <br />
+- DATABASE - MongoDB <br />
+
+## HOME PAGE
+
+<img width="100%" alt="Login" src="./client/public/SS/SS1.png">

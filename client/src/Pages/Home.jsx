@@ -1,16 +1,11 @@
-import React from "react";
-import "../style.css";
-// import Form from "./Form";
-import Casserole from "./Casserole";
-import Greeting from "./Greeting";
-import NavBar from "./NavBar";
+import Casserole from "../Components/Casserole";
+import Greeting from "../Components/Greeting";
 
 function App(props) {
 
   return (
-    <div className="App">
-      <div className="App">
-        <NavBar/>
+    <div className="">
+      <div className="">
         <Greeting/>
         <Casserole Title="Beverages" isAdmin={props.isAdmin} InputsList={['Name', 'Price', 'Image']}/>
         <Casserole Title="QuickBites" isAdmin={props.isAdmin} InputsList={['Name', 'Price', 'Image']}/>

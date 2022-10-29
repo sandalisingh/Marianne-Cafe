@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
  
 
@@ -17,7 +17,7 @@ function Input(props){
                 type={ props.labeling === 'Price' ? "number": "text" } 
                 step="0.01" onChange={handleInput} value={entry} 
                 name={props.labeling} required 
-            />
+            /><br/>
         </div>
     );
 }

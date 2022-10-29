@@ -15,6 +15,14 @@ app.set('views', path.join(__dirname, "front", "public"))   // since express def
 app.use(express.static(path.join(__dirname, 'client', 'src')));  // Path to our public directory
 app.set('view engine', 'html')  // Without this you would need to supply the extension to res.render() ex: res.render('users.html').
 app.use( bodyParser.urlencoded({ extended : true }) );
+app.use(bodyParser.json());
+
+//----------------------- ----------------------- -----------------------
+
+app.get("/", (req, res) => {
+    // console.log("Haan bol");
+    res.json("Working")
+  } );  
 
 // -------------- Beverages --------------
 
