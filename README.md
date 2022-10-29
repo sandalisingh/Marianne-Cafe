@@ -9,7 +9,6 @@
 
 > LIGHT MODE
 <img width="100%" alt="Login" src="./client/public/SS/SS2.png"/>
-<br/>
 
 > DARK MODE
 <img width="100%" alt="Login" src="./client/public/SS/SS1.png"/> 
