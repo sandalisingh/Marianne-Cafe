@@ -10,12 +10,16 @@ function Block(props){
         addClass += "Block"
     // }
 
-    function handleClick(id, heading) {
+    function handleClick1(id, heading) {
         // fetch(`/menu/deletion?delID=${encodeURIComponent(event)}`)
         fetch(`/${encodeURIComponent(heading)}/deletion?delID=${encodeURIComponent(id)}`)
           .then(response => response.json())
           .then(state => this.setState(state));
         window.location.reload(false);      //to refresh the page
+    }
+
+    function handleClick2(id, heading) {
+        console.log("CLICKED PLUS")
     }
 
     function mouseEnter(){
@@ -34,10 +38,12 @@ function Block(props){
             <img src={props.ImageSRC} alt="Something"/>
             
             {props.isAdmin===true? 
-                <button onClick={() => handleClick(props.id, props.Heading)} className="CircularBtn TopRight">X</button>
-                : null
+                <button onClick={() => handleClick1(props.id, props.Heading)} className="CircularBtn TopRight">X</button>
+                : 
+                <button onClick={() => handleClick2(props.id, props.Heading)} className="CircularBtn TopRight">+</button>
+                
             }
-            {/* <i onClick={() => handleClick(props.id)} className="CircularBtn TopRight fal fa-times"></i> */}
+
         </div>
     );
 }

@@ -65,11 +65,11 @@ footer{
 
 .CircularBtn{
     border-radius: 50% !important;
-    width: 3rem;
-    height: 3rem;
-    margin: 0.4rem !important;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0.6rem !important;
     size: 3rem !important;
-    border: 2px solid rebeccapurple;
+    border: 1px solid rebeccapurple;
     color: rebeccapurple;
     font-size: 1.2rem !important;
     font-weight: 200;
@@ -78,7 +78,7 @@ footer{
 .CircularBtn:hover{
     background-color: rgb(220, 192, 248);
     color: white;
-    border-color: rgb(249, 214, 214);
+    border: 1px solid rgb(255, 255, 255);
 }
 
 .ToggleBtn{
@@ -96,6 +96,26 @@ footer{
     height: 100px;
     margin: 40px !important;
 }
+
+.ButtonStyle{
+    width: 100px;
+    height: 2.8rem;
+    margin: 0.6rem !important;
+    size: 3rem !important;
+    background-color: rebeccapurple;
+    border: 1px solid rebeccapurple;
+    color: white;
+    font-size: 1.2rem !important;
+    font-weight: 200;
+}
+
+.ButtonStyle:hover{
+    background-color: rgb(220, 192, 248);
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+
 
 /* ---------------------------- TEXTS FONTS ---------------------------- */
 
@@ -177,13 +197,17 @@ footer{
 /* ---------------------------- FORMS ---------------------------- */
 
 .Form{
-    padding: 3%;
+    padding: 10% 10% !important;
 }
 
 .FormBox{
-    width: 600px !important;
-    height: 300px !important;
+    width: 500px !important;
+    height: 400px !important;
     /* margin-bottom: 100px; */
+}
+
+.FormDiv{
+    padding: 4%;
 }
 
 /* ---------------------------- INPUT BOXES ---------------------------- */
@@ -208,6 +232,15 @@ img{
     object-fit: cover !important;    /* to fit and fill the parent box with the image without distorting/ maintains the image aspect ratio */
 }
 
+img:hover{
+    filter: brightness(70%);
+    -webkit-transition: all 1s ease;    /* WebKit */
+    -moz-transition: all 1s ease;       /* Mozilla */
+    -o-transition: all 1s ease;         /* Opera */
+    -ms-transition: all 1s ease;        /* Internet Explorer */
+    transition: all 1s ease;            /* CSS3 */
+}
+
 /* ---------------------------- CONTAINERS ---------------------------- */
 
 .SkeletonBox{
@@ -220,10 +253,12 @@ img{
 }
 
 .neonBox{
-    border: 0.2rem solid #fff;
+    border: 0.2rem solid rebeccapurple;
+    /* padding: 3px; */
     border-radius: 2rem;
     height: 100px;
-    width: 20% !important;
+    width: 20% ;
+    /* width: 20% !important; */
 }
 
 .neonBox:hover{
@@ -270,14 +305,10 @@ img{
 }
 
 .Block{
-    /* padding-left: 10px;
-    padding-bottom: 20px; */
     overflow: visible !important;
-    /* width: 380px !important; */
     height: 300px !important;
-    /* width: 100%; */
-    /* margin: 3% 7% !important; */
     margin: 3px;
+    border: 1.4px solid rgb(0, 0, 0);
 }
 
 .Block h4{
@@ -285,7 +316,7 @@ img{
     top: 15% !important;
     left: 5%;
     size: 5rem !important;
-    /* z-index: 1; */
+    z-index: 1;
 }
 
 .Block h6{
@@ -293,6 +324,7 @@ img{
     top: 25%;
     left: 5%;
     size: 20px;
+    z-index: 1;
 }
 
 .Block:hover{
@@ -302,10 +334,64 @@ img{
     color: black !important;
 }
 
-/* .BlockAdmin{
-    background-color: red !important;
-    margin: 3%; 
-} */
+@keyframes ChangeTextShade {
+    from {
+        color: #fff;
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+    }
+    to {
+        color: black;
+        text-shadow: 
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px rgb(169, 83, 255),
+            0 0 82px rgb(169, 83, 255),
+            0 0 92px rgb(169, 83, 255),
+            0 0 102px rgb(169, 83, 255),
+            0 0 151px rgb(169, 83, 255);
+    }
+}
+
+@keyframes ChangeImage {
+    from {
+        color: #fff;
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px #0fa,
+            0 0 82px #0fa,
+            0 0 92px #0fa,
+            0 0 102px #0fa,
+            0 0 151px #0fa;
+    }
+    to {
+        color: black;
+        text-shadow: 
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px rgb(169, 83, 255),
+            0 0 82px rgb(169, 83, 255),
+            0 0 92px rgb(169, 83, 255),
+            0 0 102px rgb(169, 83, 255),
+            0 0 151px rgb(169, 83, 255);
+    }
+}
+
+.ChangeBlockOnHover{
+    animation-name: ChangeTextShade, ;
+    animation-duration: 4s;
+}
 
 /* ----------------------------  Carousel ---------------------------- */
 

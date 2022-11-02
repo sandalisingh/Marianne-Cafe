@@ -6,7 +6,7 @@ function App(props) {
   return (
     <div className="">
       <div className="">
-        <Greeting/>
+        <Greeting Title="Menu"/>
         <Casserole Title="Beverages" isAdmin={props.isAdmin} InputsList={['Name', 'Price', 'Image']}/>
         <Casserole Title="QuickBites" isAdmin={props.isAdmin} InputsList={['Name', 'Price', 'Image']}/>
         <Casserole Title="Meals" isAdmin={props.isAdmin} InputsList={['Name', 'Price', 'Image']}/> 

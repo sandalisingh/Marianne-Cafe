@@ -64,6 +64,44 @@ app.get('/Desserts/deletion', (req, res) => DB.deleteDessertsItem( req.query.del
 
 app.post("/Desserts", (req, res) => DB.addDessertsItem( { Name: req.body.Name , Price: req.body.Price, Image: req.body.Image } ).then( () => res.redirect('/')) );
 
-//----------------------- ----------------------- -----------------------
+//---------------------------------------- U S E R-----------------------------------------------
+
+// app.get("/users", (req, res) => DB.USERS_DB.getUsersList().then( (result) => res.json(result)) );
+
+// app.get("/login", (req, res) => DB.USERS_DB.loginUser().then( (result) => {
+//     console.log("\n\n/loginUser\n\n");
+//     let FinalData = { 
+//         isSuccessfullyLoggedIn : false,
+//         LoggedInUser : null,
+//         isError : false,
+//         ErrorMessage : null,
+//         isDietitian: false
+//     };
+
+//     //----------- CHECK LOG IN
+//     if( result === true ) {
+//       FinalData.isSuccessfullyLoggedIn = true;
+//       FinalData.LoggedInUser = req.Username;
+
+//       //------------------ CHECK DIETITIAN LOG IN
+//       if( DB.USERS_DB.LoggedInAsDietitian(req)) {
+//         console.log("\n\nDIETITIAN\n\n");
+//         FinalData.isDietitian = true;
+//       } 
+
+//     } 
+    
+//     //----------- NOT LOGGED IN
+//     else {
+//       console.log("\n\nNOT LOGGED IN\n\n")
+//       FinalData.isError = true;
+//       FinalData.ErrorMessage = "ERROR!";
+//     }
+    
+//     res.json(FinalData);
+//   }
+// ));
+
+//---------------------------------------- P O R T -----------------------------------------------
 
 app.listen(3001, err => { err ? console.log("ERROR : " + err) : null });

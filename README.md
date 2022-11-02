@@ -5,11 +5,18 @@
 - BACK END - NodeJs <br />
 - DATABASE - MongoDB <br />
 
-## HOME PAGE
-
+## HOME PAGE 
+ 
 > LIGHT MODE
-<img width="100%" alt="Login" src="./client/public/SS/SS2.png"/>
+<img width="100%" alt="Login" src="./client/public/SS/SS5.png"/>
 
 > DARK MODE
-<img width="100%" alt="Login" src="./client/public/SS/SS1.png"/> 
+<img width="100%" alt="Login" src="./client/public/SS/SS8.png"/> 
+
+> ADMIN
+<img width="100%" alt="Login" src="./client/public/SS/SS12.png"/>
+<img width="100%" alt="Login" src="./client/public/SS/SS11.png"/>
+
+## LOGIN PAGE
+<img width="100%" alt="Login" src="./client/public/SS/SS3.png"/>
 
