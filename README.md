@@ -8,15 +8,15 @@
 ## HOME PAGE 
  
 > LIGHT MODE
-<img width="100%" alt="LightMode" src="./client/public/SS/SS5.png"/>
+<img width="100%" alt="LightMode" src="./client/public/SS/SS5.jpeg"/>
 
 > DARK MODE
-<img width="100%" alt="DarkMode" src="./client/public/SS/SS8.png"/> 
+<img width="100%" alt="DarkMode" src="./client/public/SS/SS8.jpeg"/> 
 
 > ADMIN
-<img width="100%" alt="Admin1" src="./client/public/SS/SS12.png"/>
-<img width="100%" alt="Admin2" src="./client/public/SS/SS11.png"/>
+<img width="100%" alt="Admin1" src="./client/public/SS/SS12.jpeg"/>
+<img width="100%" alt="Admin2" src="./client/public/SS/SS11.jpeg"/>
 
 ## LOGIN PAGE
-<img width="100%" alt="Login" src="./client/public/SS/SS3.png"/>
+<img width="100%" alt="Login" src="./client/public/SS/SS3.jpeg"/>
 
