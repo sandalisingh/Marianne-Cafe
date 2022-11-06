@@ -31,16 +31,41 @@ function Block(props){
     }
 
     return( 
-        <div onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} key={props.key} className={addClass}>
-            <h4 className={TextFontClass+" SmallText FontCursive"}>{props.Name}</h4>
-            <h6 className={TextFontClass+" VSmallText"}>₹ {props.Price}</h6>
+        <div 
+            onMouseEnter={mouseEnter} 
+            onMouseLeave={mouseLeave} 
+            className={addClass}
+        >
+            <h4 
+                className={TextFontClass+" SmallText FontCursive"}
+            >
+                {props.Name}
+            </h4>
+            <h6 
+                className={TextFontClass+" VSmallText"}
+            >
+            ₹ {props.Price}
+            </h6>
             
-            <img src={props.ImageSRC} alt="Something"/>
+            <img  
+                src={props.ImageSRC} 
+                alt="Something"
+            />
             
             {props.isAdmin===true? 
-                <button onClick={() => handleClick1(props.id, props.Heading)} className="CircularBtn TopRight">X</button>
+                <button 
+                    onClick={() => handleClick1(props.id, props.Heading)} 
+                    className="CircularBtn TopRight"
+                >
+                X
+                </button>
                 : 
-                <button onClick={() => handleClick2(props.id, props.Heading)} className="CircularBtn TopRight">+</button>
+                <button 
+                    onClick={() => handleClick2(props.id, props.Heading)} 
+                    className="CircularBtn TopRight"
+                >
+                +
+                </button>
                 
             }
 

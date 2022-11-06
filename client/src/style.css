@@ -2,27 +2,46 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* background-color: black !important;
-    color: white !important; */
+
+    cursor: url(../public/Image/C11.png) 4 12, auto;
+}
+
+.DARKmode{
+    background-color: black !important;
+    color: white !important;
 }
 
 .App:only-child {
     margin: 3% 7%;
 }
 
+/* ---------------------------- CURSOR ---------------------------- */
+
+
+
 /* ---------------------------- FOOTER ---------------------------- */
 
 footer{
-    /* position: fixed;
-    bottom: 0;
-    left: 0; */
+    /* position: absolute;
+    bottom: 0; */
+    
     padding: 3px 2px 0;
-    /* color: black;
-    background-color: white; */
+    
     width: 100%;
     font-size: 1rem;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
+}
+
+/* ---------------------------- LINKS ---------------------------- */
+
+a{
+    text-decoration: none;
+    color: rebeccapurple;
+}
+
+a:hover{
+    color: rgb(176, 130, 222);
 }
 
 /* ---------------------------- NAVBAR ---------------------------- */
@@ -202,8 +221,13 @@ footer{
 
 .FormBox{
     width: 500px !important;
-    height: 400px !important;
+    height: 380px !important;
     /* margin-bottom: 100px; */
+}
+
+.FormBox2{
+    width: 500px !important;
+    height: 550px !important;
 }
 
 .FormDiv{
@@ -232,16 +256,21 @@ img{
     object-fit: cover !important;    /* to fit and fill the parent box with the image without distorting/ maintains the image aspect ratio */
 }
 
-img:hover{
+/* img:hover{
     filter: brightness(70%);
     -webkit-transition: all 1s ease;    /* WebKit */
-    -moz-transition: all 1s ease;       /* Mozilla */
-    -o-transition: all 1s ease;         /* Opera */
-    -ms-transition: all 1s ease;        /* Internet Explorer */
-    transition: all 1s ease;            /* CSS3 */
-}
+    /* -moz-transition: all 1s ease;       /* Mozilla */
+    /* -o-transition: all 1s ease;         /* Opera */
+    /* -ms-transition: all 1s ease;        /* Internet Explorer */
+    /* transition: all 1s ease;            /* CSS3 */
+/* } */ 
 
 /* ---------------------------- CONTAINERS ---------------------------- */
+
+.SingleOrderBox{
+    margin-bottom: 3%;
+
+}
 
 .SkeletonBox{
     padding: 0;
@@ -262,10 +291,7 @@ img:hover{
 }
 
 .neonBox:hover{
-    animation: pulsate 1.5s infinite alternate;  
-    /* border: 0.2rem solid #fff;
-    border-radius: 2rem;
-    padding: 0.4em; */
+    /* animation: pulsate 1.5s infinite alternate;   */
     box-shadow: 0 0 .2rem #fff,
             0 0 .2rem #fff,
             0 0 2rem #bc13fe,
@@ -304,12 +330,12 @@ img:hover{
     padding: 3%;
 }
 
-.Block{
+/* .Block{
     overflow: visible !important;
     height: 300px !important;
     margin: 3px;
     border: 1.4px solid rgb(0, 0, 0);
-}
+} */
 
 .Block h4{
     position: absolute;
@@ -328,13 +354,12 @@ img:hover{
 }
 
 .Block:hover{
-    color: black;
     cursor: pointer;
     border: 1.4px solid rebeccapurple;
     color: black !important;
 }
 
-@keyframes ChangeTextShade {
+/* @keyframes ChangeTextShade {
     from {
         color: #fff;
         text-shadow:
@@ -386,6 +411,32 @@ img:hover{
             0 0 102px rgb(169, 83, 255),
             0 0 151px rgb(169, 83, 255);
     }
+} */
+
+.Block{
+    overflow: visible !important;
+    height: 300px !important;
+    margin: 3px;
+    border: 1.4px solid ;
+    color: black !important;
+}
+
+.Block img{
+    filter: brightness(50%);
+    -webkit-transition: all 1s ease;    /* WebKit */
+    -moz-transition: all 1s ease;       /* Mozilla */
+    -o-transition: all 1s ease;         /* Opera */
+    -ms-transition: all 1s ease;        /* Internet Explorer */
+    transition: all 1s ease;            /* CSS3 */
+}
+
+.Block img:hover{
+    filter: brightness(90%);
+    -webkit-transition: all 1s ease;    /* WebKit */
+    -moz-transition: all 1s ease;       /* Mozilla */
+    -o-transition: all 1s ease;         /* Opera */
+    -ms-transition: all 1s ease;        /* Internet Explorer */
+    transition: all 1s ease;            /* CSS3 */
 }
 
 .ChangeBlockOnHover{
