@@ -13,44 +13,35 @@ function Order2() {
   const [bill, setbill] = useState([]);
   const [TotalAmt, setTotalAmt] = useState([]);
 
-  function getTotalAmt() {
-    if (bill.length === 0) return;
+  function handleClick() {
+    localStorage.setItem('TOTAL', getTotalAmt());
+    navigate('/bill');
+  }
 
+  function getTotalAmt() {
     let SUM = 0;
 
     for (let i = 0; i < bill.length; i++) {
       SUM += (bill[i].Price * bill[i].Qty);
     }
 
-    setTotalAmt(SUM);
-    
-    console.log('getTOTAL');
-    console.log(TotalAmt);
+    // setTotalAmt(SUM);
 
-    // return SUM;
+    return SUM;
   }
 
   function getbill() {
     let x = JSON.parse(localStorage.getItem('ORDER'));
-    
     setbill(x);
-    
-    console.log('getBILL()');
-    console.log(bill);
-    
-    getTotalAmt();
   }
 
-  useEffect(() => {
-    getbill();
-    // getTotalAmt();
+  useEffect(() => getbill()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  , []);
+
+  useEffect(() => setTotalAmt(getTotalAmt())
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  function handleClick() {
-    localStorage.setItem('TOTAL', getTotalAmt());
-    navigate('/bill');
-  }
+  , []);
 
   return (
     <div className="">
