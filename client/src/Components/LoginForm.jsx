@@ -1,27 +1,43 @@
 import { Form, Button } from "react-bootstrap";
-import React from 'react';
+import React, { useEffect } from 'react';
 import IconButton from "@material-ui/core/IconButton";
-// import InputLabel from "@material-ui/core/InputLabel";
 import Visibility from "@material-ui/icons/Visibility";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
+import { useNavigate } from 'react-router-dom';
 
-function LoginForm (props) {
+function LoginForm(props) {
+  const navigate = useNavigate();
+
+  const [ERROR, setERROR] = React.useState(null);
+
+  function getERROR(text) {
+    setERROR(
+      <div className="ERROR" style={{ color: 'red' }}>
+        {text}
+      </div>
+    )
+  }
+
+  useEffect(() => getERROR()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    , []);
+
 
   const [values, setValues] = React.useState({
     password: "",
     showPassword: false,
   });
-  
+
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
-  
+
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
-  
+
   const handlePasswordChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
   };
@@ -29,54 +45,50 @@ function LoginForm (props) {
   async function handleLogin(event) {
     event.preventDefault();
 
-    // alert('USERNAME = '+event.target[0].value+'\nPASSWORD = '+event.target[1].value);
-
-    // console.log("\nHANDLE LOGIN = ");
-    // console.log(event);
-
     let CREDENTIALS = {
-      Username: event.target[0].value, 
+      Username: event.target[0].value,
       Password: event.target[1].value
     }
-
-    // alert(JSON.stringify(event))
 
     console.log("\nSENDING....");
     console.log(JSON.stringify(CREDENTIALS));
 
-    await fetch('http://localhost:3001/login', {  
+    await fetch('http://localhost:3001/login', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: { 'Content-Type': 'application/json' },
       mode: 'cors',
       cache: 'default',
       body: JSON.stringify(CREDENTIALS)
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log("TOKEN VALUE RECEIVED FROM SERVER")
-      console.log(data)
+      .then(response => response.json())
+      .then(data => {
+        console.log("TOKEN VALUE RECEIVED FROM SERVER")
+        console.log(data)
 
-      if(data.isLoggedIn === true) {
-        localStorage.setItem('TOKEN',JSON.stringify(data))
-      }
-    })
-    .catch(error => {
-      //handle error
-      console.log("ERROR");
-      console.log(error);
-    });
+        if (data.isLoggedIn === true) {
+          localStorage.setItem('TOKEN', JSON.stringify(data));
 
-    // event.preventDefault();
+          navigate('/')
+          window.location.reload();
+        } else {
+          getERROR('INVALID CREDENTIALS')
+        }
+      })
+      .catch(error => {
+        //handle error
+        console.log("ERROR");
+        console.log(error);
+      });
   }
 
   return (
     <div className="TextCenter FormDiv">
-      <Form 
-        // action="/login" 
-        // method="post" 
+      <Form
         onSubmit={handleLogin}
-        className="Form" style={{color:"#48466D"}}
+        className="" style={{ color: "#48466D" }}
       >
+        {ERROR}
+
         <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label className="">Username</Form.Label>
           <Form.Control className="" type="text" name="Username" required />
@@ -84,12 +96,7 @@ function LoginForm (props) {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Password</Form.Label>
-          {/* <Form.Control 
-            type="password" 
-            name="Password" 
-            required 
-          /> */}
-          <br/>
+          <br />
           <Input
             name="Password"
             className="form-control"
@@ -107,18 +114,16 @@ function LoginForm (props) {
               </InputAdornment>
             }
           />
-          
+
         </Form.Group>
 
-        <Button 
-          // onSubmit={handleLogin}
-          // onClick={handleLogin}
-          className="ButtonStyle" variant="primary" 
-          type="submit"
+        <Button
+          className="ButtonStyle" variant="primary"
+          type="submit" style={{width:'100px'}}
         >
           Submit
         </Button>
-        <br/>
+        <br />
         <a href="/SignUp">Sign Up ...</a>
       </Form>
     </div>

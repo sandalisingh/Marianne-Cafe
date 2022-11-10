@@ -1,9 +1,17 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body{
     padding: 0;
-    margin: 0;
+    margin: 0 0 100px;
     box-sizing: border-box;
 
     cursor: url(../public/Image/C11.png) 4 12, auto;
+    /* color: black; */
+
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .DARKmode{
@@ -22,15 +30,20 @@ body{
 /* ---------------------------- FOOTER ---------------------------- */
 
 footer{
-    /* position: absolute;
-    bottom: 0; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 100px !important;
     
-    padding: 3px 2px 0;
+    padding: 3% 7%;
     
     width: 100%;
     font-size: 1rem;
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
+
+    overflow: hidden;
 }
 
 /* ---------------------------- LINKS ---------------------------- */
@@ -100,6 +113,24 @@ a:hover{
     border: 1px solid rgb(255, 255, 255);
 }
 
+.SquareBtn{
+    /* border-radius: 50% !important; */
+    width: 2.8rem;
+    height: 2.8rem;
+    margin: 0.6rem !important;
+    size: 3rem !important;
+    border: 1px solid rebeccapurple;
+    color: rebeccapurple;
+    font-size: 1.2rem !important;
+    font-weight: 200;
+}
+
+.SquareBtn:hover{
+    background-color: rgb(220, 192, 248);
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+}
+
 .ToggleBtn{
     border-radius: 100%;
     background-color: rebeccapurple;
@@ -134,7 +165,20 @@ a:hover{
     border: 1px solid rgb(255, 255, 255);
 }
 
+.TransparentBtn{
+    background-color: transparent;
+    border: none;
+    color: rebeccapurple;
+}
 
+.TransparentBtn:hover{
+    background-color: transparent ;
+    color: rgb(255, 255, 255);
+}
+
+.TransparentBtn:active{
+    background-color: transparent !important;
+}
 
 /* ---------------------------- TEXTS FONTS ---------------------------- */
 
@@ -209,6 +253,10 @@ a:hover{
     font-size: 1rem;
 }
 
+.LargeText{
+    font-size: 3rem;
+}
+
 .VLargeText{
     font-size: 7rem;
 }
@@ -267,11 +315,6 @@ img{
 
 /* ---------------------------- CONTAINERS ---------------------------- */
 
-.SingleOrderBox{
-    margin-bottom: 3%;
-
-}
-
 .SkeletonBox{
     padding: 0;
     margin: 0;
@@ -323,6 +366,19 @@ img{
       0 0 70px #bc13fe,
       0 0 80px #bc13fe;
     }
+}
+
+.SingleOrderBox{
+    
+    background-color: #D9BEF8;
+    height: 800px;
+    border: none;
+}
+
+.SingleOrder{
+    background-color: white;
+    border-radius: 2rem;
+    margin: 3%;
 }
 
 .SingleCarousel{
@@ -485,4 +541,27 @@ img{
     margin: 0; */
     /* height: 200px; */
     /* border: 3px solid green;  */
+}
+
+.MyOrder{
+    margin: 0% 7% ;
+    padding: 3% 7%;
+    width: 100%;
+    color: rebeccapurple;
+}
+
+/* --------------------- LIST --------------------- */
+
+.ul{   
+    width: 1000px;
+}
+
+.li{
+    padding: 1% 3%;
+    color: black;
+    margin: 3% 0%;
+    border-radius: 30px;
+    width: 100%;
+    height: 70px;
+    background-color: #DBB7FE;
 }

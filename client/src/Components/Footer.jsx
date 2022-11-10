@@ -1,7 +1,7 @@
 function Footer(){
     return(
-        <footer>
-            <small>Copyright@2022</small> | Sandali Singh
+        <footer className="Center">
+            <small>Copyright@2022</small> 
         </footer>
     );
 }

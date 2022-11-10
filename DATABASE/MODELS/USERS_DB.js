@@ -2,7 +2,13 @@ const { json } = require('body-parser');
 const e = require('express');
 var mongoose = require('mongoose');
 
-const UserModel = mongoose.model("Users", new mongoose.Schema({ Username: String, PhoneNo: String, Email: String, Password:String}));
+const UserModel = mongoose.model("Users", new mongoose.Schema({ 
+    Username: String, 
+    PhoneNo: String, 
+    Email: String, 
+    Password:String,
+    placedOrder: Boolean
+}));
 
 //---------------------------------------- U S E R-----------------------------------------------
 
@@ -20,10 +26,10 @@ module.exports.UsernameExsits = async (entryUser) => {
     console.log("\n\n--> UsernameExists()")
     console.log(result+"\n\n\n\n")
 
-    if(result === true ) {
-        return true;
+    if(result === null ) {
+        return false;
     }
-    return false;
+    return true;
 }
 
 module.exports.EmailExsits = async (entryUser) => {
@@ -32,44 +38,40 @@ module.exports.EmailExsits = async (entryUser) => {
     console.log("\n\n--> EmailExists()")
     console.log(result+"\n\n\n\n")
     
-    if(result === true) {
-        return true;
+    if(result === null) {
+        return false;
     }
-    return false;
+    return true;
+}
+
+module.exports.PhoneNoExsits = async (entryUser) => {
+    const result = await UserModel.findOne({PhoneNo: entryUser.PhoneNo});
+    
+    console.log("\n\n--> PhoneNoExists()")
+    console.log(result+"\n\n\n\n")
+    
+    if(result === null) {
+        return false;
+    }
+    return true;
 }
 
 module.exports.UserExsits = async (entryUser) => {
     let ObjectFromDB;
 
-    console.log('\nENTRY USER = ');
-    console.log(entryUser)
-
     if(entryUser){
         ObjectFromDB = await UserModel.find({Username: entryUser.Username});
     }
 
-    console.log("\n--> UserExists()");
-    console.log(ObjectFromDB);
-    console.log("\n--> ~ UserExists()");
-
     if(ObjectFromDB===null) {
-        return false;
+        return null;
     }
-
-    // console.log('\nfrom DB --> '+ObjectFromDB[0].Password)
-    // console.log('\nfrom DB --> '+ObjectFromDB[0].Username)
-    // console.log('\nfrom user --> '+entryUser.Password)
-    // console.log('\nequality --> '+ObjectFromDB[0].Password === entryUser.Password)
 
     if(ObjectFromDB[0].Password === entryUser.Password) {
-        console.log('----- password matches = ')
-        
-        return true;
+        return ObjectFromDB[0];
     }
 
-    console.log('----- password NOT matches')
-
-    return false;
+    return null;
 }
 
 module.exports.loginUser = async(entryUser) => {
@@ -77,22 +79,48 @@ module.exports.loginUser = async(entryUser) => {
 }
 
 module.exports.singupUser = async(entryUser) => {
-    let result1 = await this.UsernameExsits(entryUser);
-    let result2 = await this.EmailExsits(entryUser);
-
-    console.log('\n\nRESULT1 = ');
-    console.log(result1);
-    console.log('\n\nRESULT2 = ');
-    console.log(result2);
-
-    if( result1 === false || result2 === false) {
-        let result3 = await this.addUser(entryUser);
-
-        console.log('\n\nRESULT3 = ');
-        console.log(result3);
-
-        return true;
+    let REPLY = {
+        isERROR: false,
+        ERROR: null,
+        isSignedUpSuccessfully: false
     }
     
-    return false;
+    let result1 = await this.UsernameExsits(entryUser);
+
+    if(result1 === false) {
+        let result2 = await this.EmailExsits(entryUser);
+
+        if(result2 === false) {
+            let result3 = await this.PhoneNoExsits(entryUser);
+
+            if(result3 === false) {
+                let result4 = await this.addUser(entryUser);
+
+                REPLY.isSignedUpSuccessfully = true;
+            }else{
+                REPLY.isERROR = true;
+                REPLY.ERROR = "PHONE NO. ALREADY EXISTS";
+            }
+        }else{
+            REPLY.isERROR = true;
+            REPLY.ERROR = "EMAIL ALREADY EXISTS";
+        }
+    }else{
+        REPLY.isERROR = true;
+        REPLY.ERROR = "USERNAME ALREADY EXISTS";
+    }
+
+    return REPLY;
+}
+
+module.exports.deleteUser = async (username) => {
+    await UserModel.deleteOne( { Username : username} );
+}
+
+module.exports.changePlaceOrder = async(username) => {
+    await UserModel.updateOne({Username: username}, {$set: {placedOrder: true}});
+}
+
+module.exports.changePlaceOrder2 = async(username) => {
+    await UserModel.updateOne({Username: username}, {$set: {placedOrder: false}});
 }

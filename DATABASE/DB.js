@@ -9,6 +9,7 @@ module.exports.MEALS_DB = require('./MODELS/MEALS_DB');
 module.exports.DESSERTS_DB = require('./MODELS/DESSERTS_DB');
 module.exports.MILKSHAKES_DB = require('./MODELS/MILKSHAKES_DB');
 module.exports.USERS_DB = require('./MODELS/USERS_DB');
+module.exports.ORDERS_DB = require('./MODELS/ORDERS_DB');
 
 
 
