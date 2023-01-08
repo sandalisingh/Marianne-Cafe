@@ -83,9 +83,15 @@ function Casserole(props) {
                         deviceType={props.deviceType}
                         dotListClass="custom-dot-list-style"    // Use this to style the dot list.
 
+                        swipeable={true}
+                        draggable={true}
+                        showDots={true}
+                        keyBoardControl={true}
+                        removeArrowOnDeviceType={["tablet", "mobile"]}
                         autoPlay={true}
                         autoPlaySpeed={5000}
                         infinite={true}
+                        renderButtonGroupOutside={true}
                     >
                         {
                             data && data.length > 0 && data.map((One) => (

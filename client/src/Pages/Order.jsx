@@ -54,6 +54,8 @@ function Order(props) {
           autoPlay={true}
           autoPlaySpeed={5000}
           infinite={true}
+
+          showDots={true}
           // centerMode
         >
           {
