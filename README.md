@@ -5,7 +5,9 @@
 - BACK END - NodeJs <br />
 - DATABASE - MongoDB <br />
 
-## HOME PAGE 
+## WEBSITE 
+
+<!-- ## HOME PAGE 
  
 > LIGHT MODE
 <img width="100%" alt="LightMode" src="./client/public/SS/SS5.jpeg"/>
@@ -19,4 +21,4 @@
 
 ## LOGIN PAGE
 <img width="100%" alt="Login" src="./client/public/SS/SS3.jpeg"/>
-
+ -->
